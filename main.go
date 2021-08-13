@@ -17,5 +17,12 @@ func main() {
 
 func WordCount(str string) int {
 	words := strings.Split(str, " ")
-	return len(words)
+	notEmptyWords := []string{}
+	for _, word := range words {
+	    trimmed := strings.Trim(word, "     ")
+	    if trimmed != "" {
+	        notEmptyWords = append(notEmptyWords, word)
+	    }
+	}
+	return len(notEmptyWords)
 }
